@@ -26,6 +26,8 @@ exports.register = function(req, res) {
     } else {
       if (config.sendEmail) {
         sendMail(req.body.email, hash);
+      } else {
+        console.log('no mail send');
       }
       res.send(req.body.email);
     }
@@ -34,6 +36,13 @@ exports.register = function(req, res) {
 
 exports.confirm = function(req, res) {
   console.log('confirm');
+  Registration.findOneAndUpdate({hash: req.params.hash}, {confirmed: true}, function(err) {
+    if (err) {
+      res.send(500, 'Da gabs wohl ein Fehler');
+    } else {
+      res.send(200);
+    }
+  });
 };
 
 

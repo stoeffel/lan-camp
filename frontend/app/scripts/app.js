@@ -28,6 +28,10 @@ angular.module('lanCampApp', [
         templateUrl: 'views/confirmationPending.html',
         controller: 'ConfirmationPendingCtrl'
       })
+      .when('/confirm/:hash', {
+        templateUrl: 'views/confirm.html',
+        controller: 'ConfirmCtrl'
+      })
       .when('/error', {
         templateUrl: 'views/error.html',
         controller: 'ErrorCtrl'

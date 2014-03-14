@@ -22,6 +22,9 @@ angular.module('lanCampApp', [
     }).when('/confirmationPending', {
       templateUrl: 'views/confirmationPending.html',
       controller: 'ConfirmationPendingCtrl'
+    }).when('/confirm/:hash', {
+      templateUrl: 'views/confirm.html',
+      controller: 'ConfirmCtrl'
     }).when('/error', {
       templateUrl: 'views/error.html',
       controller: 'ErrorCtrl'
@@ -73,6 +76,22 @@ angular.module('lanCampApp').controller('ConfirmationPendingCtrl', [
   '$scope',
   function ($scope) {
     $scope.APP = { name: 'Lan-Camp 2014' };
+  }
+]);
+'use strict';
+angular.module('lanCampApp').controller('ConfirmCtrl', [
+  '$scope',
+  '$http',
+  '$routeParams',
+  '$rootScope',
+  '$location',
+  function ($scope, $http, $routeParams, $rootScope, $location) {
+    $scope.APP = { name: 'Lan-Camp 2014' };
+    $http.get('/confirmRegistration/' + $routeParams.hash).success(function (data) {
+    }).error(function (data, status, headers, config) {
+      $rootScope.error = data;
+      $location.path('/error');
+    });
   }
 ]);
 'use strict';
