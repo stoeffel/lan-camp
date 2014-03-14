@@ -45,6 +45,15 @@ exports.confirm = function(req, res) {
   });
 };
 
+exports.countGamers = function(req, res) {
+  Registration.count({confirmed: true}, function(err, count) {
+    if (err) {
+      res.send(500, 'Da gabs wohl ein Fehler');
+    } else {
+      res.send(count+"");
+    }
+  });
+};
 
 function connect() {
   var q = Q.defer();

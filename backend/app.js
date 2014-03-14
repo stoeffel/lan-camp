@@ -29,6 +29,7 @@ app.configure('development', function(){
 });
 
 app.post('/register', routes.register);
+app.get('/countGamers', routes.countGamers);
 app.get('/confirmRegistration/:hash', routes.confirm);
 
 http.createServer(app).listen(app.get('port'), function(){

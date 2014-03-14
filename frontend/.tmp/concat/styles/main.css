@@ -9798,3 +9798,112 @@ body > .container {
     border-bottom: 0;
   }
 }
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?-sac0tp');
+	src:url('fonts/icomoon.eot?#iefix-sac0tp') format('embedded-opentype'),
+		url('fonts/icomoon.woff?-sac0tp') format('woff'),
+		url('fonts/icomoon.ttf?-sac0tp') format('truetype'),
+		url('fonts/icomoon.svg?-sac0tp#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-paperplane:before {
+	content: "\e600";
+}
+.icon-graduation:before {
+	content: "\e609";
+}
+.icon-newspaper:before {
+	content: "\e60a";
+}
+.icon-sigma:before {
+	content: "\e601";
+}
+.icon-file:before {
+	content: "\e602";
+}
+.icon-print:before {
+	content: "\e60b";
+}
+.icon-fort:before {
+	content: "\e60c";
+}
+.icon-gameboy:before {
+	content: "\e60d";
+}
+.icon-spaceinvaders:before {
+	content: "\e60e";
+}
+.icon-darthvader:before {
+	content: "\e60f";
+}
+.icon-controllerps:before {
+	content: "\e610";
+}
+.icon-controllernes:before {
+	content: "\e611";
+}
+.icon-controllersnes:before {
+	content: "\e612";
+}
+.icon-gamecursor:before {
+	content: "\e613";
+}
+.icon-joystickarcade:before {
+	content: "\e614";
+}
+.icon-podium:before {
+	content: "\e615";
+}
+.icon-trophy:before {
+	content: "\e616";
+}
+.icon-ghost:before {
+	content: "\e617";
+}
+.icon-pacman:before {
+	content: "\e618";
+}
+.icon-sword:before {
+	content: "\e619";
+}
+.icon-uniF6DF:before {
+	content: "\e61a";
+}
+.icon-uniF738:before {
+	content: "\e61b";
+}
+.icon-trophy2:before {
+	content: "\e603";
+}
+.icon-play:before {
+	content: "\e604";
+}
+.icon-step-backward:before {
+	content: "\e605";
+}
+.icon-fast-backward:before {
+	content: "\e606";
+}
+.icon-step-forward:before {
+	content: "\e607";
+}
+.icon-fast-forward:before {
+	content: "\e608";
+}
