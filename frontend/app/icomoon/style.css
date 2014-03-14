@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('fonts/icomoon.eot?-sac0tp');
-	src:url('fonts/icomoon.eot?#iefix-sac0tp') format('embedded-opentype'),
-		url('fonts/icomoon.woff?-sac0tp') format('woff'),
-		url('fonts/icomoon.ttf?-sac0tp') format('truetype'),
-		url('fonts/icomoon.svg?-sac0tp#icomoon') format('svg');
+	src:url('fonts/icomoon.eot?v1j897');
+	src:url('fonts/icomoon.eot?#iefixv1j897') format('embedded-opentype'),
+		url('fonts/icomoon.woff?v1j897') format('woff'),
+		url('fonts/icomoon.ttf?v1j897') format('truetype'),
+		url('fonts/icomoon.svg?v1j897#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -88,6 +88,21 @@
 }
 .icon-uniF738:before {
 	content: "\e61b";
+}
+.icon-pokemon:before {
+	content: "\e61c";
+}
+.icon-quake:before {
+	content: "\e61d";
+}
+.icon-aperture:before {
+	content: "\e61e";
+}
+.icon-oneupalt:before {
+	content: "\e61f";
+}
+.icon-github:before {
+	content: "\e620";
 }
 .icon-trophy2:before {
 	content: "\e603";

@@ -24,6 +24,10 @@ angular.module('lanCampApp', [
         templateUrl: 'views/register.html',
         controller: 'RegisterCtrl'
       })
+      .when('/confirmationPending', {
+        templateUrl: 'views/confirmationPending.html',
+        controller: 'ConfirmationPendingCtrl'
+      })
       .otherwise({
         redirectTo: '/main'
       });
