@@ -23,6 +23,12 @@ $brand-danger:  #d9534f;
 body {
     padding-top: 20px;
     padding-bottom: 20px;
+    height: 100%;
+    background: $gray-dark;
+    & > .container {
+      background: #fff;
+      padding-top: 1em;
+    }
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
