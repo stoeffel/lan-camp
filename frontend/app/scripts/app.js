@@ -28,6 +28,10 @@ angular.module('lanCampApp', [
         templateUrl: 'views/confirmationPending.html',
         controller: 'ConfirmationPendingCtrl'
       })
+      .when('/error', {
+        templateUrl: 'views/error.html',
+        controller: 'ErrorCtrl'
+      })
       .otherwise({
         redirectTo: '/main'
       });

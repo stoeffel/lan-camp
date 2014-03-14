@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('lanCampApp')
-  .controller('RegisterCtrl', function($scope, $http, $location) {
+  .controller('RegisterCtrl', function($scope, $http, $location, $rootScope) {
     $scope.APP = {
       name: 'Lan-Camp 2014'
     };
@@ -12,6 +12,7 @@ angular.module('lanCampApp')
         $location.path('/confirmationPending');
       })
         .error(function(data, status, headers, config) {
+          $rootScope.error = data;
           $location.path('/error');
         });
     };
