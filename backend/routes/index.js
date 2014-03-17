@@ -55,6 +55,16 @@ exports.countGamers = function(req, res) {
   });
 };
 
+exports.getGamers = function(req, res) {
+  Registration.find(function(err, gamers) {
+    if (err) {
+      res.send(500, 'Da gabs wohl ein Fehler');
+    } else {
+      res.send(gamers);
+    }
+  });
+};
+
 function connect() {
   var q = Q.defer();
   mongoose.connect('mongodb://localhost/lanCamp');

@@ -10,6 +10,16 @@ $brand-info:    #5bc0de;
 $brand-warning: #f0ad4e;
 $brand-danger:  #d9534f;
 
+$border-radius-base:             2px !default;
+$border-radius-large:            2px !default;
+$border-radius-small:            2px !default;
+
+$brand-primary: #955BA5;
+$brand-success: #4EBA6F;
+$brand-info:    #2D95BF;
+$brand-warning: #F0C419;
+$brand-danger:  #F15A5A;
+
 @import 'sass-bootstrap/lib/bootstrap';
 
 .browsehappy {

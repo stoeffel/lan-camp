@@ -24,6 +24,10 @@ angular.module('lanCampApp', [
         templateUrl: 'views/register.html',
         controller: 'RegisterCtrl'
       })
+      .when('/gamers', {
+        templateUrl: 'views/gamers.html',
+        controller: 'GamersCtrl'
+      })
       .when('/confirmationPending', {
         templateUrl: 'views/confirmationPending.html',
         controller: 'ConfirmationPendingCtrl'

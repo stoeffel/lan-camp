@@ -19,6 +19,9 @@ angular.module('lanCampApp', [
     }).when('/register', {
       templateUrl: 'views/register.html',
       controller: 'RegisterCtrl'
+    }).when('/gamers', {
+      templateUrl: 'views/gamers.html',
+      controller: 'GamersCtrl'
     }).when('/confirmationPending', {
       templateUrl: 'views/confirmationPending.html',
       controller: 'ConfirmationPendingCtrl'
@@ -76,6 +79,20 @@ angular.module('lanCampApp').controller('RegisterCtrl', [
         $location.path('/error');
       });
     };
+  }
+]);
+'use strict';
+angular.module('lanCampApp').controller('GamersCtrl', [
+  '$scope',
+  '$http',
+  '$rootScope',
+  function ($scope, $http, $rootScope) {
+    $scope.APP = { name: 'Lan-Camp 2014' };
+    $scope.gamers = [];
+    $http.get('/getGamers').success(function (data) {
+      console.log(data);
+      $scope.gamers = data;
+    });
   }
 ]);
 'use strict';
