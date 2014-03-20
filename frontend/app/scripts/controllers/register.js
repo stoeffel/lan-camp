@@ -2,9 +2,7 @@
 
 angular.module('lanCampApp')
   .controller('RegisterCtrl', function($scope, $http, $location, $rootScope) {
-    $scope.APP = {
-      name: 'Lan-Camp 2014'
-    };
+    $scope.location = 'register';
     $scope.submit = function() {
       $http.post('/register', $scope.form).
       success(function(data) {

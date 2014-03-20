@@ -2,7 +2,5 @@
 
 angular.module('lanCampApp')
   .controller('ContactCtrl', function ($scope) {
-    $scope.APP = {
-      name: 'Lan-Camp 2014'
-    };
+    $scope.location = 'contact';
   });

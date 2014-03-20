@@ -56,6 +56,7 @@ exports.countGamers = function(req, res) {
 };
 
 exports.getGamers = function(req, res) {
+  console.log('as');
   Registration.find(function(err, gamers) {
     if (err) {
       res.send(500, 'Da gabs wohl ein Fehler');

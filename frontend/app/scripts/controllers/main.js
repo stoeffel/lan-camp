@@ -2,9 +2,7 @@
 
 angular.module('lanCampApp')
   .controller('MainCtrl', function ($scope, $http, $rootScope) {
-    $scope.APP = {
-      name: 'Lan-Camp 2014'
-    };
+    $scope.location = 'main';
     $scope.gamers = 0;
     $http.get('/countGamers').
     success(function(data) {
