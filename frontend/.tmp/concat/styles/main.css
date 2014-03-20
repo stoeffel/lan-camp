@@ -9696,15 +9696,21 @@ body .background-image {
   background-repeat: no-repeat;
   height: 100%;
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0%;
   left: 0%;
   z-index: 0;
 }
 
+/* line 57, ../../app/styles/main.scss */
+
+textarea {
+  resize: vertical;
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 
-/* line 60, ../../app/styles/main.scss */
+/* line 64, ../../app/styles/main.scss */
 
 .header,
 .marketing,
@@ -9713,13 +9719,13 @@ body .background-image {
   padding-right: 15px;
 }
 
-/* line 66, ../../app/styles/main.scss */
+/* line 70, ../../app/styles/main.scss */
 
 .navbar li.active {
   border-bottom: 3px solid #334d5c;
 }
 
-/* line 69, ../../app/styles/main.scss */
+/* line 73, ../../app/styles/main.scss */
 
 .navbar .navbar-toggle .icon-bar {
   background: #334d5c;
@@ -9727,7 +9733,7 @@ body .background-image {
 
 /* Custom page header */
 
-/* line 74, ../../app/styles/main.scss */
+/* line 78, ../../app/styles/main.scss */
 
 .header {
   border-bottom: 1px solid #e5e5e5;
@@ -9735,7 +9741,7 @@ body .background-image {
 
 /* Make the masthead heading the same height as the navigation */
 
-/* line 79, ../../app/styles/main.scss */
+/* line 83, ../../app/styles/main.scss */
 
 .header h3 {
   margin-top: 0;
@@ -9746,7 +9752,7 @@ body .background-image {
 
 /* Custom page footer */
 
-/* line 87, ../../app/styles/main.scss */
+/* line 91, ../../app/styles/main.scss */
 
 .footer {
   padding-top: 100px;
@@ -9754,20 +9760,20 @@ body .background-image {
   color: #bababa;
 }
 
-/* line 91, ../../app/styles/main.scss */
+/* line 95, ../../app/styles/main.scss */
 
 .footer a {
   color: #bababa;
 }
 
-/* line 93, ../../app/styles/main.scss */
+/* line 97, ../../app/styles/main.scss */
 
 .footer a:hover {
   color: #334d5c;
   text-decoration: none;
 }
 
-/* line 100, ../../app/styles/main.scss */
+/* line 104, ../../app/styles/main.scss */
 
 .container-narrow > hr {
   margin: 30px 0;
@@ -9775,7 +9781,7 @@ body .background-image {
 
 /* Main marketing message and sign up button */
 
-/* line 105, ../../app/styles/main.scss */
+/* line 109, ../../app/styles/main.scss */
 
 .jumbotron {
   text-align: center;
@@ -9783,7 +9789,7 @@ body .background-image {
   background-color: transparent;
 }
 
-/* line 111, ../../app/styles/main.scss */
+/* line 115, ../../app/styles/main.scss */
 
 .jumbotron .btn {
   font-size: 21px;
@@ -9792,32 +9798,34 @@ body .background-image {
 
 /* Supporting marketing content */
 
-/* line 117, ../../app/styles/main.scss */
+/* line 121, ../../app/styles/main.scss */
 
 .marketing {
   margin: 40px 0;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
 }
 
-/* line 121, ../../app/styles/main.scss */
+/* line 127, ../../app/styles/main.scss */
 
 .marketing p + h4 {
   margin-top: 28px;
 }
 
 @media screen and (max-width: 768px) {
-  /* line 127, ../../app/styles/main.scss */
+  /* line 133, ../../app/styles/main.scss */
 
   body .background-image {
     background: #333;
     height: 110%;
     width: 110%;
-    position: absolute;
+    position: fixed;
     top: -5%;
     left: -5%;
     z-index: 0;
   }
 
-  /* line 139, ../../app/styles/main.scss */
+  /* line 145, ../../app/styles/main.scss */
 
   .navbar li.active {
     border-bottom: none;
@@ -9828,7 +9836,7 @@ body .background-image {
 /* Responsive: Portrait tablets and up */
 
 @media screen and (min-width: 768px) {
-  /* line 148, ../../app/styles/main.scss */
+  /* line 154, ../../app/styles/main.scss */
 
   .container {
     max-width: 730px;
@@ -9836,7 +9844,7 @@ body .background-image {
 
   /* Remove the padding we set earlier */
 
-  /* line 155, ../../app/styles/main.scss */
+  /* line 161, ../../app/styles/main.scss */
 
   .header,
   .marketing,
@@ -9847,7 +9855,7 @@ body .background-image {
 
   /* Space out the masthead */
 
-  /* line 160, ../../app/styles/main.scss */
+  /* line 166, ../../app/styles/main.scss */
 
   .header {
     margin-bottom: 30px;
@@ -9855,7 +9863,7 @@ body .background-image {
 
   /* Remove the bottom border on the jumbotron for visual effect */
 
-  /* line 164, ../../app/styles/main.scss */
+  /* line 170, ../../app/styles/main.scss */
 
   .jumbotron {
     border-bottom: 0;

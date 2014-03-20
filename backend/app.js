@@ -34,6 +34,8 @@ app.configure('development', function() {
 app.post('/register', routes.register);
 app.get('/countGamers', routes.countGamers);
 app.get('/getGamers', routes.getGamers(app));
+app.post('/setConfirmed', routes.setConfirmed(app));
+app.post('/deleteGamer', routes.deleteGamer(app));
 app.post('/login', routes.login(app));
 app.get('/confirmRegistration/:hash', routes.confirm);
 

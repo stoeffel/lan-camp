@@ -109,6 +109,43 @@ exports.getGamers = function(app) {
   };
 };
 
+exports.setConfirmed = function(app) {
+  return function(req, res) {
+    if (app.session && app.session.authorized) {
+      Registration.findOneAndUpdate({
+        email: req.body.email
+      }, {
+        confirmed: !req.body.confirmed
+      }, function(err) {
+        if (err) {
+          res.send(500, 'Da gabs wohl ein Fehler');
+        } else {
+          exports.getGamers(app)(req, res);
+        }
+      });
+    } else {
+      res.send(401);
+    }
+  };
+};
+
+exports.deleteGamer = function(app) {
+  return function(req, res) {
+    if (app.session && app.session.authorized) {
+      Registration.findOneAndRemove({
+        email: req.body.email
+      }, function(err) {
+        if (err) {
+          res.send(500, 'Da gabs wohl ein Fehler');
+        } else {
+          exports.getGamers(app)(req, res);
+        }
+      });
+    } else {
+      res.send(401);
+    }
+  };
+};
 function connect() {
   var q = Q.defer();
   mongoose.connect('mongodb://localhost/lanCamp');

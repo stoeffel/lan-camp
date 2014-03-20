@@ -14,15 +14,19 @@
           <th>Geburtstag</th>
           <th>Adresse</th>
           <th>E-Mail</th>
+          <th>Bestätigt</th>
+          <th>l&ouml;schen</th>
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="gamer in gamers | filter:byConfirmed" ng-class="{success: gamer.confirmed === true}">
+        <tr ng-repeat="gamer in gamers | filter:byConfirmed">
           <td>{{gamer.name}}</td>
           <td>{{gamer.lastname}}</td>
           <td>{{gamer.birthday}}</td>
           <td>{{gamer.adress}}</td>
           <td>{{gamer.email}}</td>
+          <td><button ng-click="setConfirmed(gamer)" ng-class="{'btn-success active': gamer.confirmed === true, 'btn-default': gamer.confirmed === false}" class="btn btn-md"><span class="icon-sword"></span></button></td>
+          <td><button ng-click="deleteGamer(gamer)" class="btn btn-md btn-danger"><span class="icon-aperture"></span></button></td>
         </tr>
       </tbody>
     </table>

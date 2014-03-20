@@ -127,7 +127,18 @@ angular.module('lanCampApp').controller('GamersCtrl', [
   '$rootScope',
   '$location',
   function ($scope, $http, $rootScope, $location) {
-    $scope.gamers = [];
+    $scope.gamers = [
+      {
+        name: 'asd',
+        lastname: 'sd',
+        confirmed: true
+      },
+      {
+        name: 'asd',
+        lastname: 'sd',
+        confirmed: false
+      }
+    ];
     $scope.confirmed = undefined;
     $scope.showAll = function () {
       $scope.confirmed = undefined;
@@ -145,6 +156,27 @@ angular.module('lanCampApp').controller('GamersCtrl', [
         return entry.confirmed === $scope.confirmed;
       }
     };
+    $scope.deleteGamer = function (gamer) {
+      var sure = confirm('Bist du sicher?\nUh, boys? How about that evac? Commander? Jim? What the hell is going on up there??');
+      if (!sure) {
+        return true;
+      }
+      console.log(gamer);
+      $http.post('/deleteGamer', gamer).success(function (data) {
+        $scope.gamers = data;
+      }).error(function (data, status, headers, config) {
+        $rootScope.error = data || 'ups';
+        $location.path('/error');
+      });
+    };
+    $scope.setConfirmed = function (gamer) {
+      $http.post('/setConfirmed', gamer).success(function (data) {
+        $scope.gamers = data;
+      }).error(function (data, status, headers, config) {
+        $rootScope.error = data || 'ups';
+        $location.path('/error');
+      });
+    };
     $http.get('/getGamers').success(function (data) {
       $scope.gamers = data;
     }).error(function (data, status, headers, config) {
@@ -160,6 +192,12 @@ angular.module('lanCampApp').controller('LoginCtrl', [
   '$location',
   '$rootScope',
   function ($scope, $http, $location, $rootScope) {
+    $(window).load(function () {
+      // updates autofilled fields
+      window.setTimeout(function () {
+        $('input[ng-model]').trigger('input');
+      }, 100);
+    });
     $scope.submit = function () {
       $http.post('/login', $scope.form).success(function (data) {
         $location.path('/gamers');
