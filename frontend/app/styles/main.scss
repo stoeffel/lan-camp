@@ -4,21 +4,21 @@ $gray-dark:    lighten(#000, 20%);   // #333
 $gray:         lighten(#000, 33.5%); // #555
 $gray-light:   lighten(#000, 60%);   // #999
 $gray-lighter: lighten(#000, 93.5%); // #eee
-$brand-primary: #428bca;
-$brand-success: #5cb85c;
-$brand-info:    #5bc0de;
-$brand-warning: #f0ad4e;
-$brand-danger:  #d9534f;
 
 $border-radius-base:             2px !default;
 $border-radius-large:            2px !default;
 $border-radius-small:            2px !default;
 
-$brand-primary: #955BA5;
-$brand-success: #4EBA6F;
-$brand-info:    #2D95BF;
-$brand-warning: #F0C419;
-$brand-danger:  #F15A5A;
+//$brand-primary: #2D95BF;
+//$brand-success: #4EBA6F;
+//$brand-info:    #955BA5;
+//$brand-warning: #F0C419;
+//$brand-danger:  #F15A5A;
+$brand-primary: #334D5C;
+$brand-success: #45B29D;
+$brand-info:    #EFC94C;
+$brand-warning: #E27A3F;
+$brand-danger:  #DF5A49;
 @import "compass/css3";
 @import 'sass-bootstrap/lib/bootstrap';
 
@@ -62,6 +62,14 @@ body {
   padding-right: 15px;
 }
 
+.navbar {
+  li.active {
+    border-bottom: 3px solid $brand-primary;
+  }
+  .navbar-toggle .icon-bar {
+    background: $brand-primary;
+  }
+}
 /* Custom page header */
 .header {
   border-bottom: 1px solid #e5e5e5;
@@ -77,9 +85,16 @@ body {
 
 /* Custom page footer */
 .footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+  padding-top: 100px;
+  padding: 40px;
+  color: #bababa;
+  a {
+    color: #bababa;
+    &:hover {
+      color: $brand-primary;
+      text-decoration: none;
+    }
+  }
 }
 
 .container-narrow > hr {
@@ -90,6 +105,7 @@ body {
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
+  background-color: transparent;
 }
 
 .jumbotron .btn {
@@ -116,6 +132,13 @@ body {
       top: -5%;
       left: -5%;
       z-index: 0;
+    }
+  }
+
+  .navbar {
+    li.active {
+      border-bottom: none;
+      border-left: 3px solid $brand-primary;
     }
   }
 }
