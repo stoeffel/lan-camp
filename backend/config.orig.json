@@ -1,5 +1,9 @@
 {
-  "email": "****",
-  "password": "*****",
-  "sendEmail": false
+    "email": "****",
+    "password": "*****",
+    "sendEmail": false,
+    "admin": {
+        "email": "****",
+        "password": "*****",
+    }
 }
