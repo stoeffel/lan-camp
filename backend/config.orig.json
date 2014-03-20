@@ -2,6 +2,7 @@
     "email": "****",
     "password": "*****",
     "sendEmail": false,
+    "maxGamers": 24,
     "secret": "asd",
     "admin": {
         "email": "****",

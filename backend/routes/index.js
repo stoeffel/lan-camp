@@ -40,12 +40,25 @@ exports.register = function(req, res) {
     if (err) {
       res.send(500, 'Schon vergessen? Du bist bereits angemeldet');
     } else {
-      if (config.sendEmail) {
-        sendMail(req.body.email, hash);
-      } else {
-        console.log('no mail send');
-      }
-      res.send(req.body.email);
+      Registration.count({
+        confirmed: true
+      }, function(err, count) {
+        if (err) {
+          res.send(500, 'Da gabs wohl ein Fehler');
+        } else {
+          if (count >= config.maxGamers) {
+            res.send('Es wurde bereits das Maximum an Teilnehmern erreicht. Falls ein Platz frei wird werden wir uns bei dir Melden.');
+          } else {
+            if (config.sendEmail) {
+              console.log(count, config.maxGamers);
+              sendMail(req.body.email, hash);
+              res.send('Du wirst in kürze eine E-Mail erhalten, um die Anmeldung zu bestätigen.');
+            } else {
+              res.send('Besten dank für die Anmeldung.');
+            }
+          }
+        }
+      });
     }
   });
 };
@@ -72,7 +85,10 @@ exports.countGamers = function(req, res) {
     if (err) {
       res.send(500, 'Da gabs wohl ein Fehler');
     } else {
-      res.send(count + "");
+      res.send({
+        count: count,
+        maxGamers: config.maxGamers
+      });
     }
   });
 };
