@@ -6,7 +6,6 @@ angular.module('lanCampApp')
     $scope.submit = function() {
       $http.post('/register', $scope.form).
       success(function(data) {
-        console.log(data);
         $location.path('/confirmationPending');
       })
         .error(function(data, status, headers, config) {

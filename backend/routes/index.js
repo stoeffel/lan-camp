@@ -7,6 +7,22 @@ var mongoose = require('mongoose'),
 
 connect();
 
+exports.login = function(app) {
+  return function(req, res) {
+    if (req.body.email === config.admin.email && req.body.password === config.admin.password) {
+      app.session = {
+        authorized: true
+      };
+      res.send(200);
+    } else {
+      if (app.session) {
+        app.session.destroy();
+      }
+      res.send(401);
+    }
+  };
+};
+
 exports.register = function(req, res) {
   var hash, registration;
   hash = md5('asdjkhads891k12' + req.body.name + req.body.email + 'ajvghbr82123h;');
@@ -36,7 +52,11 @@ exports.register = function(req, res) {
 
 exports.confirm = function(req, res) {
   console.log('confirm');
-  Registration.findOneAndUpdate({hash: req.params.hash}, {confirmed: true}, function(err) {
+  Registration.findOneAndUpdate({
+    hash: req.params.hash
+  }, {
+    confirmed: true
+  }, function(err) {
     if (err) {
       res.send(500, 'Da gabs wohl ein Fehler');
     } else {
@@ -46,24 +66,31 @@ exports.confirm = function(req, res) {
 };
 
 exports.countGamers = function(req, res) {
-  Registration.count({confirmed: true}, function(err, count) {
+  Registration.count({
+    confirmed: true
+  }, function(err, count) {
     if (err) {
       res.send(500, 'Da gabs wohl ein Fehler');
     } else {
-      res.send(count+"");
+      res.send(count + "");
     }
   });
 };
 
-exports.getGamers = function(req, res) {
-  console.log('as');
-  Registration.find(function(err, gamers) {
-    if (err) {
-      res.send(500, 'Da gabs wohl ein Fehler');
+exports.getGamers = function(app) {
+  return function(req, res) {
+    if (app.session && app.session.authorized) {
+      Registration.find(function(err, gamers) {
+        if (err) {
+          res.send(500, 'Da gabs wohl ein Fehler');
+        } else {
+          res.send(gamers);
+        }
+      });
     } else {
-      res.send(gamers);
+      res.send(401);
     }
-  });
+  };
 };
 
 function connect() {

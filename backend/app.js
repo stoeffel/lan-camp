@@ -4,6 +4,7 @@
 
 var express = require('express'),
   routes = require('./routes'),
+  config = require('./config.json'),
   http = require('http'),
   path = require('path');
 
@@ -16,7 +17,9 @@ app.configure(function() {
   app.use(express.favicon());
   app.use(express.logger('dev'));
   app.use(express.methodOverride());
-
+  app.use(express.cookieParser(config.secret));
+  app.use(express.session());
+  app.use(express.bodyParser());
   app.use(app.router);
   app.use(express.static(path.join(__dirname, '..', 'frontend', 'dist')));
   app.use('/', express.static(path.join(__dirname, '..', 'frontend', 'dist', 'index.html')));
@@ -30,7 +33,8 @@ app.configure('development', function() {
 
 app.post('/register', routes.register);
 app.get('/countGamers', routes.countGamers);
-app.get('/getGamers', routes.getGamers);
+app.get('/getGamers', routes.getGamers(app));
+app.post('/login', routes.login(app));
 app.get('/confirmRegistration/:hash', routes.confirm);
 
 http.createServer(app).listen(app.get('port'), function() {

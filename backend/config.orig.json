@@ -2,8 +2,9 @@
     "email": "****",
     "password": "*****",
     "sendEmail": false,
+    "secret": "asd",
     "admin": {
         "email": "****",
-        "password": "*****",
+        "password": "*****"
     }
 }
