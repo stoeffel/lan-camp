@@ -16,7 +16,7 @@ exports.login = function(app) {
       res.send(200);
     } else {
       if (app.session) {
-        app.session.destroy();
+        delete app.session;
       }
       res.send(401);
     }

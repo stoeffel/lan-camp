@@ -9691,18 +9691,20 @@ body > .container {
 
 body .background-image {
   background-image: url(../images/lancamp13-blur.jpg);
-  background-size: 110%;
-  height: 110%;
-  width: 110%;
+  background-color: #333;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
   position: absolute;
-  top: -5%;
-  left: -5%;
+  top: 0%;
+  left: 0%;
   z-index: 0;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 
-/* line 58, ../../app/styles/main.scss */
+/* line 60, ../../app/styles/main.scss */
 
 .header,
 .marketing,
@@ -9713,7 +9715,7 @@ body .background-image {
 
 /* Custom page header */
 
-/* line 64, ../../app/styles/main.scss */
+/* line 66, ../../app/styles/main.scss */
 
 .header {
   border-bottom: 1px solid #e5e5e5;
@@ -9721,7 +9723,7 @@ body .background-image {
 
 /* Make the masthead heading the same height as the navigation */
 
-/* line 69, ../../app/styles/main.scss */
+/* line 71, ../../app/styles/main.scss */
 
 .header h3 {
   margin-top: 0;
@@ -9732,7 +9734,7 @@ body .background-image {
 
 /* Custom page footer */
 
-/* line 77, ../../app/styles/main.scss */
+/* line 79, ../../app/styles/main.scss */
 
 .footer {
   padding-top: 19px;
@@ -9740,7 +9742,7 @@ body .background-image {
   border-top: 1px solid #e5e5e5;
 }
 
-/* line 83, ../../app/styles/main.scss */
+/* line 85, ../../app/styles/main.scss */
 
 .container-narrow > hr {
   margin: 30px 0;
@@ -9748,14 +9750,14 @@ body .background-image {
 
 /* Main marketing message and sign up button */
 
-/* line 88, ../../app/styles/main.scss */
+/* line 90, ../../app/styles/main.scss */
 
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
 }
 
-/* line 93, ../../app/styles/main.scss */
+/* line 95, ../../app/styles/main.scss */
 
 .jumbotron .btn {
   font-size: 21px;
@@ -9764,20 +9766,20 @@ body .background-image {
 
 /* Supporting marketing content */
 
-/* line 99, ../../app/styles/main.scss */
+/* line 101, ../../app/styles/main.scss */
 
 .marketing {
   margin: 40px 0;
 }
 
-/* line 103, ../../app/styles/main.scss */
+/* line 105, ../../app/styles/main.scss */
 
 .marketing p + h4 {
   margin-top: 28px;
 }
 
 @media screen and (max-width: 768px) {
-  /* line 109, ../../app/styles/main.scss */
+  /* line 111, ../../app/styles/main.scss */
 
   body .background-image {
     background: #333;
@@ -9793,7 +9795,7 @@ body .background-image {
 /* Responsive: Portrait tablets and up */
 
 @media screen and (min-width: 768px) {
-  /* line 123, ../../app/styles/main.scss */
+  /* line 125, ../../app/styles/main.scss */
 
   .container {
     max-width: 730px;
@@ -9801,7 +9803,7 @@ body .background-image {
 
   /* Remove the padding we set earlier */
 
-  /* line 130, ../../app/styles/main.scss */
+  /* line 132, ../../app/styles/main.scss */
 
   .header,
   .marketing,
@@ -9812,7 +9814,7 @@ body .background-image {
 
   /* Space out the masthead */
 
-  /* line 135, ../../app/styles/main.scss */
+  /* line 137, ../../app/styles/main.scss */
 
   .header {
     margin-bottom: 30px;
@@ -9820,7 +9822,7 @@ body .background-image {
 
   /* Remove the bottom border on the jumbotron for visual effect */
 
-  /* line 139, ../../app/styles/main.scss */
+  /* line 141, ../../app/styles/main.scss */
 
   .jumbotron {
     border-bottom: 0;
