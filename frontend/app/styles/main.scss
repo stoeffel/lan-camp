@@ -21,6 +21,14 @@ $brand-warning: #E27A3F;
 $brand-danger:  #DF5A49;
 @import "compass/css3";
 @import 'sass-bootstrap/lib/bootstrap';
+/*
+  Allow angular.js to be loaded in body, hiding cloaked elements until
+  templates compile.  The !important is important given that there may be
+  other selectors that are more specific or come later and might alter display.
+ */
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
 
 .browsehappy {
   margin: 0.2em 0;
