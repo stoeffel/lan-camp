@@ -9659,7 +9659,21 @@ td.visible-print {
   }
 }
 
-/* line 25, ../../app/styles/main.scss */
+/*
+Allow angular.js to be loaded in body, hiding cloaked elements until
+templates compile.  The !important is important given that there may be
+other selectors that are more specific or come later and might alter display.
+ */
+
+/* line 29, ../../app/styles/main.scss */
+
+[ng\:cloak],
+[ng-cloak],
+.ng-cloak {
+  display: none !important;
+}
+
+/* line 33, ../../app/styles/main.scss */
 
 .browsehappy {
   margin: 0.2em 0;
@@ -9670,15 +9684,16 @@ td.visible-print {
 
 /* Space out content a bit */
 
-/* line 33, ../../app/styles/main.scss */
+/* line 42, ../../app/styles/main.scss */
 
 body {
-  padding-top: 20px;
+  padding-top: 40px;
   padding-bottom: 20px;
   height: 100%;
+  background-color: #333;
 }
 
-/* line 37, ../../app/styles/main.scss */
+/* line 47, ../../app/styles/main.scss */
 
 body > .container {
   background: #fff;
@@ -9686,7 +9701,7 @@ body > .container {
   position: relative;
 }
 
-/* line 42, ../../app/styles/main.scss */
+/* line 52, ../../app/styles/main.scss */
 
 body .background-image {
   background: url(../images/lancamp13-blur.jpg) center center no-repeat;
@@ -9699,7 +9714,7 @@ body .background-image {
   left: 0%;
 }
 
-/* line 54, ../../app/styles/main.scss */
+/* line 64, ../../app/styles/main.scss */
 
 textarea {
   resize: vertical;
@@ -9707,7 +9722,7 @@ textarea {
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 
-/* line 61, ../../app/styles/main.scss */
+/* line 71, ../../app/styles/main.scss */
 
 .header,
 .marketing,
@@ -9716,13 +9731,20 @@ textarea {
   padding-right: 15px;
 }
 
-/* line 67, ../../app/styles/main.scss */
+/* line 76, ../../app/styles/main.scss */
+
+.navbar {
+  width: 700px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* line 79, ../../app/styles/main.scss */
 
 .navbar li.active {
   border-bottom: 3px solid #334d5c;
 }
 
-/* line 70, ../../app/styles/main.scss */
+/* line 82, ../../app/styles/main.scss */
 
 .navbar .navbar-toggle .icon-bar {
   background: #334d5c;
@@ -9730,7 +9752,7 @@ textarea {
 
 /* Custom page header */
 
-/* line 75, ../../app/styles/main.scss */
+/* line 87, ../../app/styles/main.scss */
 
 .header {
   border-bottom: 1px solid #e5e5e5;
@@ -9738,7 +9760,7 @@ textarea {
 
 /* Make the masthead heading the same height as the navigation */
 
-/* line 80, ../../app/styles/main.scss */
+/* line 92, ../../app/styles/main.scss */
 
 .header h3 {
   margin-top: 0;
@@ -9749,7 +9771,7 @@ textarea {
 
 /* Custom page footer */
 
-/* line 88, ../../app/styles/main.scss */
+/* line 100, ../../app/styles/main.scss */
 
 .footer {
   padding-top: 100px;
@@ -9757,20 +9779,20 @@ textarea {
   color: #bababa;
 }
 
-/* line 92, ../../app/styles/main.scss */
+/* line 104, ../../app/styles/main.scss */
 
 .footer a {
   color: #bababa;
 }
 
-/* line 94, ../../app/styles/main.scss */
+/* line 106, ../../app/styles/main.scss */
 
 .footer a:hover {
   color: #334d5c;
   text-decoration: none;
 }
 
-/* line 101, ../../app/styles/main.scss */
+/* line 113, ../../app/styles/main.scss */
 
 .container-narrow > hr {
   margin: 30px 0;
@@ -9778,15 +9800,15 @@ textarea {
 
 /* Main marketing message and sign up button */
 
-/* line 106, ../../app/styles/main.scss */
+/* line 118, ../../app/styles/main.scss */
 
 .jumbotron {
   text-align: center;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 0px solid #e5e5e5;
   background-color: transparent;
 }
 
-/* line 112, ../../app/styles/main.scss */
+/* line 124, ../../app/styles/main.scss */
 
 .jumbotron .btn {
   font-size: 21px;
@@ -9795,7 +9817,7 @@ textarea {
 
 /* Supporting marketing content */
 
-/* line 118, ../../app/styles/main.scss */
+/* line 130, ../../app/styles/main.scss */
 
 .marketing {
   margin: 40px 0;
@@ -9803,26 +9825,30 @@ textarea {
   padding-right: 20px !important;
 }
 
-/* line 124, ../../app/styles/main.scss */
+/* line 136, ../../app/styles/main.scss */
 
 .marketing p + h4 {
   margin-top: 28px;
 }
 
 @media screen and (max-width: 768px) {
-  /* line 130, ../../app/styles/main.scss */
+  /* line 141, ../../app/styles/main.scss */
 
-  body .background-image {
-    background: #333;
-    height: 110%;
-    width: 110%;
-    position: fixed;
-    top: -5%;
-    left: -5%;
-    z-index: 0;
+  body {
+    padding-top: 3px;
   }
 
-  /* line 142, ../../app/styles/main.scss */
+  /* line 145, ../../app/styles/main.scss */
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+  }
+
+  /* line 151, ../../app/styles/main.scss */
 
   .navbar li.active {
     border-bottom: none;
@@ -9833,7 +9859,7 @@ textarea {
 /* Responsive: Portrait tablets and up */
 
 @media screen and (min-width: 768px) {
-  /* line 151, ../../app/styles/main.scss */
+  /* line 160, ../../app/styles/main.scss */
 
   .container {
     max-width: 730px;
@@ -9841,7 +9867,7 @@ textarea {
 
   /* Remove the padding we set earlier */
 
-  /* line 158, ../../app/styles/main.scss */
+  /* line 167, ../../app/styles/main.scss */
 
   .header,
   .marketing,
@@ -9852,7 +9878,7 @@ textarea {
 
   /* Space out the masthead */
 
-  /* line 163, ../../app/styles/main.scss */
+  /* line 172, ../../app/styles/main.scss */
 
   .header {
     margin-bottom: 30px;
@@ -9860,7 +9886,7 @@ textarea {
 
   /* Remove the bottom border on the jumbotron for visual effect */
 
-  /* line 167, ../../app/styles/main.scss */
+  /* line 176, ../../app/styles/main.scss */
 
   .jumbotron {
     border-bottom: 0;

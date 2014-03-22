@@ -22,9 +22,9 @@ $brand-danger:  #DF5A49;
 @import "compass/css3";
 @import 'sass-bootstrap/lib/bootstrap';
 /*
-  Allow angular.js to be loaded in body, hiding cloaked elements until
-  templates compile.  The !important is important given that there may be
-  other selectors that are more specific or come later and might alter display.
+Allow angular.js to be loaded in body, hiding cloaked elements until
+templates compile.  The !important is important given that there may be
+other selectors that are more specific or come later and might alter display.
  */
 [ng\:cloak], [ng-cloak], .ng-cloak {
   display: none !important;
@@ -37,11 +37,13 @@ $brand-danger:  #DF5A49;
   padding: 0.2em 0;
 }
 
+
 /* Space out content a bit */
 body {
-  padding-top: 20px;
+  padding-top: 40px;
   padding-bottom: 20px;
   height: 100%;
+  background-color: #333;
   & > .container {
     background: #fff;
     padding-top: 1em;
@@ -72,6 +74,8 @@ textarea {
 }
 
 .navbar {
+  width: 700px;
+  background: rgba(255,255,255,0.8);
   li.active {
     border-bottom: 3px solid $brand-primary;
   }
@@ -113,7 +117,7 @@ textarea {
 /* Main marketing message and sign up button */
 .jumbotron {
   text-align: center;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 0px solid #e5e5e5;
   background-color: transparent;
 }
 
@@ -135,18 +139,15 @@ textarea {
 
 @media screen and (max-width: 768px){
   body {
-    .background-image {
-      background: #333;
-      height: 110%;
-      width: 110%;
-      position: fixed;
-      top: -5%;
-      left: -5%;
-      z-index: 0;
-    }
+    padding-top: 3px;
   }
 
   .navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: $zindex-navbar-fixed;
     li.active {
       border-bottom: none;
       border-left: 3px solid $brand-primary;
