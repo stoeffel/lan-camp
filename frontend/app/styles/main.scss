@@ -140,6 +140,9 @@ textarea {
 @media screen and (max-width: 768px){
   body {
     padding-top: 3px;
+    .background-image {
+      background: #222;
+    }
   }
 
   .navbar {
