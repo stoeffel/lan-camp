@@ -47,7 +47,7 @@ exports.register = function(req, res) {
           res.send(500, 'Da gabs wohl ein Fehler');
         } else {
           if (count >= config.maxGamers) {
-            res.send('Es wurde bereits das Maximum an Teilnehmern erreicht. Falls ein Platz frei wird werden wir uns bei dir Melden.');
+            res.send('Es wurde bereits das Maximum an Teilnehmern erreicht. Falls ein Platz frei wird werden wir uns bei dir melden.');
           } else {
             if (config.sendEmail) {
               console.log(count, config.maxGamers);
