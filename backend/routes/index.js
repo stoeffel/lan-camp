@@ -190,7 +190,7 @@ function sendMail(email, hash) {
       from: 'LanCamp ✔ <registration@lan-camp.ch>', // sender address
       to: email,
       subject: 'LanCamp 14 - Anmeldungbestätigen ✔', // Subject line
-      html: 'Bitte bestätige deine Anmeldung mit einem click auf den Link unten.<br><a href=\'http://lan-camp.ch:3000/#/confirm/' + hash + '\'>lan-camp.ch/confirm/' + hash + '</a>'
+      html: 'Bitte bestätige deine Anmeldung mit einem click auf den Link unten.<br><a href=\''+ config.hostname + '/#/confirm/' + hash + '\'>lan-camp.ch/confirm/' + hash + '</a>'
     };
 
   // send mail with defined transport object
