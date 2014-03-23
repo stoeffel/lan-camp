@@ -6,6 +6,7 @@
   <button ng-class="{active: confirmed === true}" ng-click="showConfirmed()" type="button" class="btn btn-default">bestätigte</button>
   <button ng-class="{active: confirmed === false}" ng-click="showUnconfirmed()" type="button" class="btn btn-default">unbestätigte</button>
 </div>
+<div style="overflow:auto;">
 <table class="table">
       <thead>
         <tr>
@@ -30,6 +31,7 @@
         </tr>
       </tbody>
     </table>
+</div>
 </div>
 
 <footer ng-include="'views/footer.html'"></footer>
