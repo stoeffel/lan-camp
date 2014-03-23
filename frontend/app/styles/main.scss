@@ -151,6 +151,7 @@ textarea {
     right: 0;
     left: 0;
     z-index: $zindex-navbar-fixed;
+    @include box-shadow(#bababa 0px 0px 15px);
     li.active {
       border-bottom: none;
       border-left: 3px solid $brand-primary;

@@ -9852,9 +9852,10 @@ textarea {
     right: 0;
     left: 0;
     z-index: 1030;
+    box-shadow: #bababa 0px 0px 15px;
   }
 
-  /* line 154, ../../app/styles/main.scss */
+  /* line 155, ../../app/styles/main.scss */
 
   .navbar li.active {
     border-bottom: none;
@@ -9865,7 +9866,7 @@ textarea {
 /* Responsive: Portrait tablets and up */
 
 @media screen and (min-width: 768px) {
-  /* line 163, ../../app/styles/main.scss */
+  /* line 164, ../../app/styles/main.scss */
 
   .container {
     max-width: 730px;
@@ -9873,7 +9874,7 @@ textarea {
 
   /* Remove the padding we set earlier */
 
-  /* line 170, ../../app/styles/main.scss */
+  /* line 171, ../../app/styles/main.scss */
 
   .header,
   .marketing,
@@ -9884,7 +9885,7 @@ textarea {
 
   /* Space out the masthead */
 
-  /* line 175, ../../app/styles/main.scss */
+  /* line 176, ../../app/styles/main.scss */
 
   .header {
     margin-bottom: 30px;
@@ -9892,7 +9893,7 @@ textarea {
 
   /* Remove the bottom border on the jumbotron for visual effect */
 
-  /* line 179, ../../app/styles/main.scss */
+  /* line 180, ../../app/styles/main.scss */
 
   .jumbotron {
     border-bottom: 0;
