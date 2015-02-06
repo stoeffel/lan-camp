@@ -179,29 +179,26 @@ function createSchema() {
 }
 
 function sendMail(email, hash) {
-  var smtpTransport = nodemailer.createTransport('SMTP', {
+  var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
       user: config.email,
       pass: config.password
     }
+  });
   }),
-    mailOptions = {
-      from: 'LanCamp ✔ <registration@lan-camp.ch>', // sender address
-      to: email,
-      subject: 'LanCamp 14 - Anmeldungbestätigen ✔', // Subject line
-      html: 'Bitte bestätige deine Anmeldung mit einem click auf den Link unten.<br><a href=\''+ config.hostname + '/#/confirm/' + hash + '\'>Best&auml;tigungs-link</a>'
-    };
+  mailOptions = {
+    from: 'LanCamp ✔ <registration@lan-camp.ch>', // sender address
+    to: email,
+    subject: 'LanCamp 15 - Anmeldungbestätigen ✔', // Subject line
+    html: 'Bitte bestätige deine Anmeldung mit einem click auf den Link unten.<br><a href=\''+ config.hostname + '/#/confirm/' + hash + '\'>Best&auml;tigungs-link</a>'
+  };
 
-  // send mail with defined transport object
-  smtpTransport.sendMail(mailOptions, function(error, response) {
-    if (error) {
+  transporter.sendMail(mailOptions, function(error, info){
+    if(error){
       console.log(error);
-    } else {
-      console.log('Message sent: ' + response.message);
+    }else{
+      console.log('Message sent: ' + info.response);
     }
-
-    // if you don't want to use this transport object anymore, uncomment following line
-    //smtpTransport.close(); // shut down the connection pool, no more messages
   });
 }
