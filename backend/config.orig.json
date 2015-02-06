@@ -7,5 +7,6 @@
     "admin": {
         "email": "****",
         "password": "*****"
-    }
+    },
+    "hostname": "****"
 }
