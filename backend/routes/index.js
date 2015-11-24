@@ -186,12 +186,12 @@ function sendMail(email, hash) {
       pass: config.password
     }
   });
-  }),
+  //}),
   mailOptions = {
     from: 'LanCamp ✔ <registration@lan-camp.ch>', // sender address
     to: email,
-    subject: 'LanCamp 15 - Anmeldungbestätigen ✔', // Subject line
-    html: 'Bitte bestätige deine Anmeldung mit einem click auf den Link unten.<br><a href=\''+ config.hostname + '/#/confirm/' + hash + '\'>Best&auml;tigungs-link</a>'
+    subject: 'LanCamp 16 - Anmeldungbestätigen ✔', // Subject line
+    html: 'Bitte bestätige deine Anmeldung mit einem click auf den Link unten.<br><a href=\'http://'+ config.hostname + '/#/confirm/' + hash + '\'>Best&auml;tigungs-link</a>'
   };
 
   transporter.sendMail(mailOptions, function(error, info){
