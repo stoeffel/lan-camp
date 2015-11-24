@@ -3,6 +3,6 @@
 angular.module('lanCampApp')
   .controller('AppCtrl', function ($scope) {
     $scope.APP = {
-      name: 'Lan-Camp 2014'
+      name: 'Lan-Camp 2016'
     };
   });
